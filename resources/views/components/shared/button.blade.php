@@ -1,0 +1,2 @@
+<button type="button" {{ $attributes->merge(["class" => "px-4 py-1 text-white text-lg font-medium rounded-md w-full " . ($type === "danger" ? "bg-red-600 hover:bg-red-800" : "bg-indigo-600 hover:bg-indigo-800")]) }}
+    >{{ $slot }}</button>
