@@ -6,15 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class message extends Component
+class Settings extends Component
 {
-    public $type;
+    public $user, $update, $delete;
     /**
      * Create a new component instance.
      */
-    public function __construct($type)
+    public function __construct($update, $delete)
     {
-        $this->type = $type;
+        $this->user = auth()->user();
+        $this->update = $update;
+        $this->delete = $delete;
     }
 
     /**
@@ -22,6 +24,6 @@ class message extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.shared.message');
+        return view('components.shared.settings');
     }
 }

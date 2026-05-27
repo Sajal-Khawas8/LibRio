@@ -25,7 +25,7 @@ class StoreCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "category" => ["bail", "required", "min:3", "max:50", "regex:/^[a-zA-Z\s]*$/", Rule::unique("categories", "name")->ignore($this->route("category"))],
+            "category" => ["bail", "required", "min:3", "max:20", "regex:/^[a-zA-Z\s]*$/", Rule::unique("categories", "name")->ignore($this->route("category"))],
         ];
     }
 }
