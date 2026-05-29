@@ -54,7 +54,7 @@ class BookController extends Controller
         }
 
         return redirect()->route("admin.books.index")
-            ->with("success", $validated['title'] . " has been added.");
+            ->with("success", $req->title . " has been added.");
     }
 
     public function edit(Book $book)
