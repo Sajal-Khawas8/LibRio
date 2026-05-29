@@ -5,6 +5,9 @@ composer install --no-dev --working-dir=/var/www/html
 echo "Running migrations..."
 php artisan migrate --seed --force
 
+echo "Creating symlink..."
+php artisan storage:link
+
 echo "Clearing cache..."
 php artisan optimize:clear
 
