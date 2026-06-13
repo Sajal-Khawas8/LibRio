@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\HasUuid;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -22,6 +23,19 @@ class Book extends Model
     ];
 
     protected $with = ["category"];
+
+    protected function cover(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->cover
+            ? cache()->remember(
+                "cover_{$this->id}",
+                now()->addDay(),
+                fn() => Storage::temporaryUrl($this->cover, now()->addDay())
+            )
+            : null,
+        );
+    }
 
     // Relationships
     public function category(): BelongsTo
