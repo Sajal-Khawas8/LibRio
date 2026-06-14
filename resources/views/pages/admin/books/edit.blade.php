@@ -61,7 +61,7 @@
                             <x-icons.close-circle class="w-6 h-6 text-black" />
                         </x-shared.button>
                         <div class="py-4">
-                            <img src="{{ Storage::url($book->cover) }}" alt="{{ $book->title }}"
+                            <img src="{{ $book->cover }}" alt="{{ $book->title }}"
                                 class="w-48 h-56 mx-auto">
                         </div>
                     </div>

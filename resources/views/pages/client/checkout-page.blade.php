@@ -11,7 +11,7 @@
             @foreach ($books as $book)
             <li class="flex items-center gap-4 py-4">
                 <div class="border border-gray-200 rounded-md w-20">
-                    <img src="{{ Storage::url($book->cover) }}" alt="{{ $book->title }}"
+                    <img src="{{ $book->cover }}" alt="{{ $book->title }}"
                         class="h-24 w-full object-cover rounded-md">
                 </div>
                 <article class="flex-1 flex flex-col">

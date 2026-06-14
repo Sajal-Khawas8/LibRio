@@ -66,7 +66,6 @@ class BookController extends Controller
 
     public function update(StoreBookRequest $req, Book $book)
     {
-
         try {
             DB::transaction(function () use ($req, $book) {
                 $validated = $req->validated();
@@ -90,7 +89,7 @@ class BookController extends Controller
                     'title' => $validated['title'],
                     'author' => $validated['author'],
                     'description' => $validated['description'],
-                    'cover' => $filePath ?? $book->cover,
+                    'cover' => $filePath ?? $book->getRawOriginal('cover'),
                     'category_id' => $validated['category'],
                     'rent' => $validated['rent'],
                     'fine' => $validated['fine'],

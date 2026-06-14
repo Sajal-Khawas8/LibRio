@@ -1,6 +1,6 @@
 <figure class="relative">
     <div class="h-72 w-full border">
-        <img src="{{ Storage::url($book->cover) }}" alt="{{ $book->title }}" class="h-full w-full object-fill">
+        <img src="{{ $book->cover }}" alt="{{ $book->title }}" class="h-full w-full object-fill">
     </div>
     <figcaption class="p-2 max-w-full space-y-4">
         <h3 class="font-semibold text-xl text-blue-700 truncate">{{ $book->title }}</h3>
