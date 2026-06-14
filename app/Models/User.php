@@ -58,7 +58,7 @@ class User extends Authenticatable
     protected function image(): Attribute
     {
         return Attribute::make(
-            get: fn(?string $value) => Storage::temporaryUrl($value, now()->addDay())
+            get: fn(?string $value) => $value ? Storage::temporaryUrl($value, now()->addDay()) : null
         );
     }
 
