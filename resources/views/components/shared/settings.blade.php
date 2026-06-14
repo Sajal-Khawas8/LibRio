@@ -5,7 +5,7 @@
     </div>
     @else
     <div class="w-60 h-60 rounded-md mx-auto border border-gray-400">
-        <img src="{{ Storage::url($user->image) }}" alt="{{ $user->name }}" class="w-full h-full object-cover rounded-md">
+        <img src="{{ $user->image }}" alt="{{ $user->name }}" class="w-full h-full object-cover rounded-md">
     </div>
     @endempty
     <div class="space-y-3">

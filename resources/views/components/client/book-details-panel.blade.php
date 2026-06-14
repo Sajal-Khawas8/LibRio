@@ -1,6 +1,6 @@
 <section class="flex-1 space-y-3 px-6 py-4 bg-slate-100">
     <div class="h-80 w-60 mx-auto border">
-        <img src="{{ Storage::url($book->cover) }}" alt="{{ $book->title }}"
+        <img src="{{ $book->cover }}" alt="{{ $book->title }}"
             class="h-full w-full object-fill">
     </div>
     <h1 class="font-semibold text-3xl">{{ $book->title }}</h1>

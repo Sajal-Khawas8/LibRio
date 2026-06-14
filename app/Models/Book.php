@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Book extends Model
 {
@@ -27,13 +28,7 @@ class Book extends Model
     protected function cover(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->cover
-            ? cache()->remember(
-                "cover_{$this->id}",
-                now()->addDay(),
-                fn() => Storage::temporaryUrl($this->cover, now()->addDay())
-            )
-            : null,
+            get: fn(?string $value) => Storage::temporaryUrl($value, now()->addDay())
         );
     }
 

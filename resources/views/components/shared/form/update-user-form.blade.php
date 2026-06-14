@@ -41,7 +41,7 @@
                         </div>
                         @else
                         <div class="py-4">
-                            <img src="{{ Storage::url($user->image) }}" alt="{{ $user->name }}" class="w-52 h-52 mx-auto">
+                            <img src="{{ $user->image }}" alt="{{ $user->name }}" class="w-52 h-52 mx-auto">
                         </div>
                         @endempty
                     </div>

@@ -1,6 +1,6 @@
 <article class="flex items-center gap-10 h-32">
     <div class="h-full w-24">
-        <img src="{{ Storage::url($book->cover) }}" alt="{{ $book->title }}" class="h-full w-full object-fill">
+        <img src="{{ $book->cover }}" alt="{{ $book->title }}" class="h-full w-full object-fill">
     </div>
     <div class="flex flex-col justify-between h-full">
         <h2 class="text-2xl font-semibold">{{ $book->title }}</h2>
