@@ -28,7 +28,7 @@ class Book extends Model
     protected function cover(): Attribute
     {
         return Attribute::make(
-            get: fn(?string $value) => Storage::temporaryUrl($value, now()->addDay())
+            get: fn(?string $value) => $value ? Storage::temporaryUrl($value, now()->addDay()) : null
         );
     }
 
